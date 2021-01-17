@@ -1,0 +1,209 @@
+@keyframes desaparecer {
+    
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+
+}
+
+@keyframes aparecer {
+
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+
+}
+
+:root{
+
+    --duracaoAnimacaoTarefa: 1s;
+    --corDetalhes:white;
+    --corTema:rgb(0, 140, 255);
+
+}
+
+*{
+
+    margin: 0;padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--corDetalhes);
+
+}
+
+*, *::after, *::before{
+
+    box-sizing: border-box;
+
+}
+
+div#main{
+
+    width: 100vw; height: calc(var(--vh, 1vh)*100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corTema);
+
+}
+
+div#app{
+
+    height: max-content;
+    width: 400px;
+    padding: 20px;
+    border: 5px solid var(--corDetalhes);
+    border-radius: 20px;
+    position: relative;
+
+}
+
+h1{
+
+    text-transform: uppercase;
+
+}
+
+div#todoList{
+
+    margin: 10px 0;
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+    animation-name: overflow;
+    animation-duration: 1s;
+
+}
+
+ul#todoList{
+
+    margin-right: 10px;
+
+}
+
+li.todo{
+
+    position: relative;
+    display: flex;
+    padding: 10px;
+    min-height: 40px; min-height: max-content;
+    margin: 5px 0 ;
+    border: 2px solid var(--corDetalhes);
+    border-radius: 10px;
+    align-items: center;
+    animation-name: aparecer;
+    animation-duration: var(--duracaoAnimacaoTarefa);
+    opacity: 1;
+
+}
+
+input.checkboxTodo{
+
+    margin-right: 5px;
+    animation-name: aparecer;
+    animation-duration: var(--duracaoAnimacaoTarefa);
+    opacity: inherit;
+
+}
+
+input.checkboxTodo:checked ~ label{
+
+    text-decoration: line-through;
+
+}
+
+input#novaTarefa{
+
+    width: 85%;
+    padding: 10px;
+    border-radius: 100px;
+    border: 1px solid var(--corDetalhes);
+    background-color: white;
+    margin-bottom: 10px;
+    color: black;
+
+}
+
+input#novaTarefa:focus{
+
+    outline: none;
+
+}
+
+button#addNovaTarefa{
+
+    padding: 10px;
+    width: 12%;
+    border-radius: 20px;
+    border: 1px solid var(--corDetalhes);
+    background-color: white;
+    color: black;
+
+}
+
+label.tarefa{
+
+    animation-name: aparecer;
+    animation-duration: var(--duracaoAnimacaoTarefa);
+    animation-timing-function: ease-in;
+    opacity: inherit;
+    word-break:keep-all;
+    width: 88%;
+}
+
+span.excluir{
+
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    animation-duration: 1.5s;
+    animation-name: desaparecer;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+span.excluir:hover{
+
+    opacity: 1;
+
+}
+
+input#trocarCor{
+
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    border: none;
+    border-radius: 100px;
+    width: 30px; height: 30px;
+    padding: 3px;
+
+}
+
+@media screen and (orientation:portrait) {
+
+    div#app{
+
+        width:100%;
+        height: 100%;
+        border:none;
+        position: absolute;
+
+    }
+
+    div#todoList{
+
+        height: 81%;
+
+    }
+
+}
+    
+@media screen and (min-height:1000px) and (orientation:portrait){
+
+    div#todoList{
+
+        height: 87%;
+
+    }
+
+}

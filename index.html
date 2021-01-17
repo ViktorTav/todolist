@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+
+<head>
+
+    <title>Todo List</title>
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <link rel = "stylesheet" href = "css/index.css">
+
+</head>
+
+<body>
+
+    <div id = "main">
+
+        <div id = "app">
+
+            <input id = "trocarCor" onchange="trocarCorTema(this.value)" type = "color">
+
+            <h1>Todo List :</h1>
+
+            <div id = "todoList">
+
+                <ul id = "todoList"></ul>
+
+            </div>
+
+            
+            <div id = "addNovaTarefa">
+
+                <input id = "novaTarefa" type="text">
+                <button title = "Adicionar nova tarefa"id = "addNovaTarefa">+</button>
+
+            </div>
+
+            <span id = "contadorTarPendConc">Pendentes/concluídas: 0/0</span>
+
+        </div>
+
+    </div>
+
+    <script src = "js/app/index.js"></script>
+
+</body>
+
+</html>
+
