@@ -192,18 +192,20 @@ input#trocarCor{
 
     div#todoList{
 
-        height: 81%;
+        height: calc(100% - 110px);
+
+    }
+
+    div#rodape{
+
+        position: absolute;
+        height: max-content;
+        bottom: 0;
+        width: 92%;
+        margin-bottom: 10px;
 
     }
 
 }
     
-@media screen and (min-height:1000px) and (orientation:portrait){
 
-    div#todoList{
-
-        height: 87%;
-
-    }
-
-}
